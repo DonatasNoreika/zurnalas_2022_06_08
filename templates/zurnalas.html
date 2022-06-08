@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Pajamų/išlaidų žurnalas</title>
+{% endblock %}
+{% block content %}
+<h1>Pajamų/išlaidų žurnalas:</h1>
+<br/>
+{%for irasas in zurnalas%}
+{%if irasas.pajamos %}
+<p><strong>Pajamos: </strong>{{ irasas.suma }}</p>
+{% else %}
+<p><strong>Išlaidos: </strong>{{ irasas.suma }}</p>
+{% endif %}
+{%endfor%}
+<hr>
+<p><strong>Balansas: </strong>{{ suma }}</p>
+
+<hr>
+<h4>Naujas įrašas:</h4>
+<form method="post" action="#">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.suma.label(class="form-control-label") }}
+        {{ form.suma(class="form-control") }}
+    </div>
+    <div class="form-check">
+        {{ form.pajamos.label(class="form-check-input") }}
+        <br>
+        {{ form.pajamos(class="form-check-label") }}
+    </div>
+    <br>
+    {{ form.submit }}
+</form>
+
+{% endblock %}

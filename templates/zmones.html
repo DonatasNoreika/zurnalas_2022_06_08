@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Žmonių sąrašas</title>
+{% endblock %}
+{% block content %}
+<h1>Žmonių sarašas: </h1>
+{%for vardas in sarasas%}
+<hr>
+<p>{{vardas}}</p>
+{% endfor %}
+{% endblock %}

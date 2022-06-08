@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Skaičiavimai</title>
+{% endblock %}
+{% block content %}
+<h1>Skaičiavimai: </h1>
+{%for x in range(10)%}
+{%if x % 2 == 0 %}
+<p>{{x}}</p>
+{% endif %}
+{%endfor%}
+{% endblock %}
